@@ -1,0 +1,350 @@
+INFO   : [mngprc]2024/08/01 07:27:50.190895 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:27:50.190952 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:27:50.190984 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:27:50.216205 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:27:50.216269 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:27:50.216292 [mngprc]initEnvVaiable..(1)
+ERROR  : [mngprc]2024/08/01 07:27:50.216331 fail to read sysenvini.ini open ./sys_env.ini: no such file or directory
+ERROR  : [mngprc]2024/08/01 07:27:50.216366 [mngprc] 환경변수 초기화FAIL...
+INFO   : [mngprc]2024/08/01 07:27:50.216386 [mngprc] Process end..
+INFO   : [mngprc]2024/08/01 07:41:37.510171 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:41:37.510248 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:41:37.510338 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:41:37.535141 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:41:37.535206 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:41:37.535237 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:41:37.535430 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:41:37.535469 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:41:37.535497  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:41:37.535525  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:41:37.535553  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:41:37.535640  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:41:37.535691  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:41:37.535740  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:41:37.535819  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:41:37.535876  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:41:37.535939 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:54:21.296035 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:54:21.296108 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:54:21.296134 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:54:21.319276 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:54:21.319350 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:54:21.319382 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:54:21.319556 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:54:21.319600 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:54:21.319639  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:54:21.319676  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:54:21.319709  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:54:21.319740  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:54:21.319813  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:54:21.319847  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:54:21.319878  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:54:21.319916  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:54:21.319953 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:54:21.320684 [mngprc]initMemory...
+INFO   : [mngprc]2024/08/01 07:56:00.204328 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:56:00.204383 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:56:00.204417 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:56:00.226335 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:56:00.226384 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:56:00.226413 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:56:00.226515 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:56:00.226546 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:56:00.226564  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:56:00.226588  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:56:00.226614  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:56:00.226644  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:56:00.226666  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:56:00.226685  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:56:00.226706  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:56:00.226729  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:56:00.226754 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:56:00.227409 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 07:56:00.227559 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 07:57:31.100972 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:57:31.101042 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:57:31.101114 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:57:31.121873 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:57:31.121934 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:57:31.121964 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:57:31.122120 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:57:31.122159 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:57:31.122192  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:57:31.122269  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:57:31.122353  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:57:31.122404  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:57:31.122431  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:57:31.122468  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:57:31.122506  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:57:31.122543  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:57:31.122570 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:57:31.123281 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 07:57:31.124103 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 07:57:31.124232 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 07:57:31.124379 initProcessDesc..
+INFO   : [mngprc]2024/08/01 07:58:28.611648 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:58:28.611704 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:58:28.611741 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:58:28.635998 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:58:28.636026 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:58:28.636035 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:58:28.636108 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:58:28.636121 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:58:28.636134  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:58:28.636145  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:58:28.636157  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:58:28.636168  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:58:28.636179  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:58:28.636188  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:58:28.636198  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:58:28.636207  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:58:28.636216 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:58:28.636451 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 07:58:28.636614 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 07:58:28.636644 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 07:58:28.636681 initProcessDesc..
+INFO   : [mngprc]2024/08/01 07:58:31.557377 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:58:31.557445 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:58:31.557500 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:58:31.579456 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:58:31.579509 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:58:31.579533 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:58:31.579632 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:58:31.579663 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:58:31.579685  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:58:31.579705  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:58:31.579726  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:58:31.579815  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:58:31.579845  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:58:31.579869  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:58:31.579889  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:58:31.579924  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:58:31.579957 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:58:31.580578 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 07:58:31.581144 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 07:58:31.581244 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 07:58:31.581330 initProcessDesc..
+INFO   : [mngprc]2024/08/01 07:58:31.581431 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 07:58:31.581532 mngprc
+INFO   : [mngprc]2024/08/01 07:58:31.581647 ./apisvr
+INFO   : [mngprc]2024/08/01 07:58:31.581734 >>./apisvr
+INFO   : [mngprc]2024/08/01 07:58:31.581956 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 07:58:31.582064 [mngprc]SetDebugLv...
+PRINT   : [mngprc]2024/08/01 07:58:31.582099 Not Active ./apisvr 0
+WARN   : [mngprc]2024/08/01 07:58:33.582768 RST_UNEXIST [./apisvr 562445]
+WARN   : [mngprc]2024/08/01 07:58:33.582840 Process start [./apisvr]
+WARN   : [mngprc]2024/08/01 07:58:34.583164 RST_UNEXIST [./apisvr 562454]
+WARN   : [mngprc]2024/08/01 07:58:34.583221 Process start [./apisvr]
+INFO   : [mngprc]2024/08/01 07:58:34.781397 [mngprc] Accept Signal : 2
+INFO   : [mngprc]2024/08/01 07:58:34.781460 [mngprc]SIGINT(2)
+
+INFO   : [mngprc]2024/08/01 07:58:35.583509 [mngprc] Process end..
+ALWAYS : [mngprc]2024/08/01 07:58:35.583604 Kill Process:[true][562463] [./apisvr]
+PRINT   : [mngprc]2024/08/01 07:58:35.583658 All child process close(2)
+PRINT   : [mngprc]2024/08/01 07:58:36.084628 memery destroy
+PRINT   : [mngprc]2024/08/01 07:58:36.084719 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 07:59:43.826814 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 07:59:43.827035 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 07:59:43.827223 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 07:59:43.848366 cmd output :  0
+INFO   : [mngprc]2024/08/01 07:59:43.848425 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 07:59:43.848455 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 07:59:43.848582 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 07:59:43.848631 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 07:59:43.848664  	 [Database]
+ALWAYS : [mngprc]2024/08/01 07:59:43.848692  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 07:59:43.848736  	 port:3306
+ALWAYS : [mngprc]2024/08/01 07:59:43.848766  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 07:59:43.848793  	 user:dev
+ALWAYS : [mngprc]2024/08/01 07:59:43.848826  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 07:59:43.848859  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 07:59:43.848887  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 07:59:43.848913 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 07:59:43.849665 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 07:59:43.849863 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 07:59:43.849902 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 07:59:43.849934 initProcessDesc..
+INFO   : [mngprc]2024/08/01 07:59:43.849977 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 07:59:43.850026 mngprc
+INFO   : [mngprc]2024/08/01 07:59:43.850057 ./apisvr
+INFO   : [mngprc]2024/08/01 07:59:43.850090 >>./apisvr
+INFO   : [mngprc]2024/08/01 07:59:43.850189 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 07:59:43.850228 [mngprc]SetDebugLv...
+INFO   : [mngprc]2024/08/01 07:59:43.850267 [mngprc] Process end..
+PRINT   : [mngprc]2024/08/01 07:59:43.850295 All child process close(2)
+PRINT   : [mngprc]2024/08/01 07:59:44.351265 memery destroy
+PRINT   : [mngprc]2024/08/01 07:59:44.351360 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 08:00:00.800973 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 08:00:00.801258 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 08:00:00.801492 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 08:00:00.822076 cmd output :  0
+INFO   : [mngprc]2024/08/01 08:00:00.822217 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 08:00:00.822268 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 08:00:00.822396 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 08:00:00.822478 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 08:00:00.822521  	 [Database]
+ALWAYS : [mngprc]2024/08/01 08:00:00.822603  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 08:00:00.822668  	 port:3306
+ALWAYS : [mngprc]2024/08/01 08:00:00.822760  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 08:00:00.822823  	 user:dev
+ALWAYS : [mngprc]2024/08/01 08:00:00.822874  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 08:00:00.822903  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 08:00:00.822930  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 08:00:00.822972 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 08:00:00.823530 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 08:00:00.823745 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 08:00:00.823808 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 08:00:00.823835 initProcessDesc..
+INFO   : [mngprc]2024/08/01 08:00:00.823879 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 08:00:00.823915 mngprc
+INFO   : [mngprc]2024/08/01 08:00:00.823942 ./apisvr
+INFO   : [mngprc]2024/08/01 08:00:00.823974 >>./apisvr
+INFO   : [mngprc]2024/08/01 08:00:00.824068 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 08:00:00.824100 [mngprc]SetDebugLv...
+INFO   : [mngprc]2024/08/01 08:00:00.824136 [mngprc] Process end..
+PRINT   : [mngprc]2024/08/01 08:00:00.824171 All child process close(2)
+PRINT   : [mngprc]2024/08/01 08:00:01.325104 memery destroy
+PRINT   : [mngprc]2024/08/01 08:00:01.325211 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 08:00:52.424753 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 08:00:52.424808 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 08:00:52.424836 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 08:00:52.445553 cmd output :  0
+INFO   : [mngprc]2024/08/01 08:00:52.445608 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 08:00:52.445636 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 08:00:52.445750 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 08:00:52.445785 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 08:00:52.445810  	 [Database]
+ALWAYS : [mngprc]2024/08/01 08:00:52.445835  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 08:00:52.445872  	 port:3306
+ALWAYS : [mngprc]2024/08/01 08:00:52.445898  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 08:00:52.445918  	 user:dev
+ALWAYS : [mngprc]2024/08/01 08:00:52.445942  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 08:00:52.445967  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 08:00:52.445998  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 08:00:52.446028 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 08:00:52.446676 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 08:00:52.446806 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 08:00:52.446836 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 08:00:52.446861 initProcessDesc..
+INFO   : [mngprc]2024/08/01 08:00:52.446895 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 08:00:52.446919 mngprc
+INFO   : [mngprc]2024/08/01 08:00:52.446944 ./apisvr
+INFO   : [mngprc]2024/08/01 08:00:52.446968 >>./apisvr
+INFO   : [mngprc]2024/08/01 08:00:52.447045 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 08:00:52.447077 [mngprc]SetDebugLv...
+INFO   : [mngprc]2024/08/01 08:00:52.447103 [mngprc] Process end..
+PRINT   : [mngprc]2024/08/01 08:00:52.447133 All child process close(2)
+PRINT   : [mngprc]2024/08/01 08:00:52.948230 memery destroy
+PRINT   : [mngprc]2024/08/01 08:00:52.948302 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 08:02:41.549139 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 08:02:41.549194 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 08:02:41.549224 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 08:02:41.570584 cmd output : gildong   562769       1  0 08:00 pts/0    00:00:00 ./apisvr
+ 61
+ERROR  : [mngprc]2024/08/01 08:02:41.570651 [mngprc]프로세스 is running ...
+INFO   : [mngprc]2024/08/01 08:03:15.033197 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 08:03:15.033263 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 08:03:15.033297 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 08:03:15.054898 cmd output :  0
+INFO   : [mngprc]2024/08/01 08:03:15.054930 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 08:03:15.054940 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 08:03:15.055004 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 08:03:15.055018 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 08:03:15.055034  	 [Database]
+ALWAYS : [mngprc]2024/08/01 08:03:15.055049  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 08:03:15.055059  	 port:3306
+ALWAYS : [mngprc]2024/08/01 08:03:15.055072  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 08:03:15.055100  	 user:dev
+ALWAYS : [mngprc]2024/08/01 08:03:15.055107  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 08:03:15.055114  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 08:03:15.055124  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 08:03:15.055138 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 08:03:15.055528 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 08:03:15.056704 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 08:03:15.056920 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 08:03:15.057129 initProcessDesc..
+INFO   : [mngprc]2024/08/01 08:03:15.057330 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 08:03:15.057538 mngprc
+INFO   : [mngprc]2024/08/01 08:03:15.057740 ./apisvr
+INFO   : [mngprc]2024/08/01 08:03:15.057931 >>./apisvr
+INFO   : [mngprc]2024/08/01 08:03:15.058513 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 08:03:15.058729 [mngprc]SetDebugLv...
+PRINT   : [mngprc]2024/08/01 08:03:15.058930 Mng.. true, true
+INFO   : [mngprc]2024/08/01 08:03:15.059152 [mngprc] Process end..
+PRINT   : [mngprc]2024/08/01 08:03:15.059339 All child process close(2)
+PRINT   : [mngprc]2024/08/01 08:03:15.560536 memery destroy
+PRINT   : [mngprc]2024/08/01 08:03:15.560624 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 08:05:27.737808 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 08:05:27.737865 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 08:05:27.737893 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 08:05:27.760896 cmd output :  0
+INFO   : [mngprc]2024/08/01 08:05:27.760974 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 08:05:27.761020 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 08:05:27.761207 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 08:05:27.761246 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 08:05:27.761290  	 [Database]
+ALWAYS : [mngprc]2024/08/01 08:05:27.761326  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 08:05:27.761364  	 port:3306
+ALWAYS : [mngprc]2024/08/01 08:05:27.761401  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 08:05:27.761437  	 user:dev
+ALWAYS : [mngprc]2024/08/01 08:05:27.761468  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 08:05:27.761498  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 08:05:27.761528  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 08:05:27.761559 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 08:05:27.762079 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 08:05:27.762761 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 08:05:27.762914 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 08:05:27.763044 initProcessDesc..
+INFO   : [mngprc]2024/08/01 08:05:27.763187 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 08:05:27.763313 mngprc
+INFO   : [mngprc]2024/08/01 08:05:27.763460 ./apisvr
+INFO   : [mngprc]2024/08/01 08:05:27.763588 >>./apisvr
+INFO   : [mngprc]2024/08/01 08:05:27.764001 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 08:05:27.764179 [mngprc]SetDebugLv...
+PRINT   : [mngprc]2024/08/01 08:05:27.764327 Mng.. true, false
+PRINT   : [mngprc]2024/08/01 08:05:27.764465 Not Active ./apisvr 0
+INFO   : [mngprc]2024/08/01 08:05:31.011374 [mngprc] Accept Signal : 2
+INFO   : [mngprc]2024/08/01 08:05:31.011442 [mngprc]SIGINT(2)
+
+INFO   : [mngprc]2024/08/01 08:05:31.765232 [mngprc] Process end..
+ALWAYS : [mngprc]2024/08/01 08:05:31.765299 Kill Process:[true][563326] [./apisvr]
+PRINT   : [mngprc]2024/08/01 08:05:31.765394 All child process close(2)
+PRINT   : [mngprc]2024/08/01 08:05:32.266240 memery destroy
+PRINT   : [mngprc]2024/08/01 08:05:32.266298 [mngprc] Process quit, byebye~ :)
+INFO   : [mngprc]2024/08/01 09:28:33.854189 [mngprc] Process start
+INFO   : [mngprc]2024/08/01 09:28:33.854246 [mngprc]isAlreadyProcess...
+PRINT   : [mngprc]2024/08/01 09:28:33.854280 prcdesc : ./apisvr
+PRINT   : [mngprc]2024/08/01 09:28:33.878501 cmd output :  0
+INFO   : [mngprc]2024/08/01 09:28:33.878595 [mngprc]initEnv ...
+ALWAYS : [mngprc]2024/08/01 09:28:33.878632 [mngprc]initEnvVaiable..(1)
+ALWAYS : [mngprc]2024/08/01 09:28:33.878767 [mngprc]initEnvVaiable..(2)
+ALWAYS : [mngprc]2024/08/01 09:28:33.878823 [mngprc]App Environment variable
+ALWAYS : [mngprc]2024/08/01 09:28:33.878876  	 [Database]
+ALWAYS : [mngprc]2024/08/01 09:28:33.878916  	 host:10.1.1.164
+ALWAYS : [mngprc]2024/08/01 09:28:33.878976  	 port:3306
+ALWAYS : [mngprc]2024/08/01 09:28:33.879018  	 db  :uwpis
+ALWAYS : [mngprc]2024/08/01 09:28:33.879059  	 user:dev
+ALWAYS : [mngprc]2024/08/01 09:28:33.879098  	 pw:dev
+ALWAYS : [mngprc]2024/08/01 09:28:33.879138  	 [Logging]
+ALWAYS : [mngprc]2024/08/01 09:28:33.879176  	 DebufLv:2
+INFO   : [mngprc]2024/08/01 09:28:33.879216 [mngprc]iniSignal
+INFO   : [mngprc]2024/08/01 09:28:33.879711 [mngprc]initMemory...#1
+INFO   : [mngprc]2024/08/01 09:28:33.879885 [mngprc]initMemory...#2
+INFO   : [mngprc]2024/08/01 09:28:33.879948 [mngprc]initMemory...#3
+ALWAYS : [mngprc]2024/08/01 09:28:33.879995 initProcessDesc..
+INFO   : [mngprc]2024/08/01 09:28:33.880032 [mngprc]initProcess
+INFO   : [mngprc]2024/08/01 09:28:33.880060 mngprc
+INFO   : [mngprc]2024/08/01 09:28:33.880100 ./apisvr
+INFO   : [mngprc]2024/08/01 09:28:33.880139 >>./apisvr
+INFO   : [mngprc]2024/08/01 09:28:33.880220 [mngprc]initEnv ok
+INFO   : [mngprc]2024/08/01 09:28:33.880254 [mngprc]SetDebugLv...
+PRINT   : [mngprc]2024/08/01 09:28:33.880278 Mng.. true, false
+PRINT   : [mngprc]2024/08/01 09:28:33.880318 Not Active ./apisvr 0
+INFO   : [mngprc]2024/08/01 09:28:35.764759 [mngprc] Accept Signal : 2
+INFO   : [mngprc]2024/08/01 09:28:35.764836 [mngprc]SIGINT(2)
+
+INFO   : [mngprc]2024/08/01 09:28:35.880685 [mngprc] Process end..
+ALWAYS : [mngprc]2024/08/01 09:28:35.880747 Kill Process:[true][565678] [./apisvr]
+PRINT   : [mngprc]2024/08/01 09:28:35.880823 All child process close(2)
+PRINT   : [mngprc]2024/08/01 09:28:36.381779 memery destroy
+PRINT   : [mngprc]2024/08/01 09:28:36.381844 [mngprc] Process quit, byebye~ :)

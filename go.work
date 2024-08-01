@@ -1,0 +1,14 @@
+go 1.21.9
+
+use (
+	./apisvr
+	./apisvr/app/appmodel
+	./apisvr/app/dbapp
+	./apisvr/app/dbapp/mdb
+	./apisvr/app/httpapp
+	./apisvr/app/msgapp
+	./apisvr/app/objdb
+	./cli
+	./cli/cmd
+	./sharedObj
+)

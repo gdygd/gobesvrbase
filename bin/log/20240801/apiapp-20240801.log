@@ -1,0 +1,250 @@
+ALWAYS : [apiapp]2024/08/01 07:58:31.588214 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 07:58:31.588573 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 07:58:31.588762 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 07:58:31.588912  	 [Database]
+ALWAYS : [apiapp]2024/08/01 07:58:31.589138  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 07:58:31.589390  	 port:3306
+ALWAYS : [apiapp]2024/08/01 07:58:31.589624  	 user:dev
+ALWAYS : [apiapp]2024/08/01 07:58:31.589858  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 07:58:31.590081  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 07:58:31.590320  	 [Http]
+ALWAYS : [apiapp]2024/08/01 07:58:31.590544  	 port:15000
+ALWAYS : [apiapp]2024/08/01 07:58:31.590792  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 07:58:31.591039  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 07:58:31.591342  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 07:58:31.591596 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 07:58:31.591731 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 07:58:31.592278 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:31.592304 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:31.592324 apisvr process ID : 562445 562445
+ALWAYS : [apiapp]2024/08/01 07:58:31.592336 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 07:58:31.592353 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 07:58:31.626618 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 07:58:31.626671 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 07:58:33.589586 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 07:58:33.589822 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 07:58:33.589906 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 07:58:33.589984  	 [Database]
+ALWAYS : [apiapp]2024/08/01 07:58:33.590088  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 07:58:33.590151  	 port:3306
+ALWAYS : [apiapp]2024/08/01 07:58:33.590221  	 user:dev
+ALWAYS : [apiapp]2024/08/01 07:58:33.590303  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 07:58:33.590417  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 07:58:33.590476  	 [Http]
+ALWAYS : [apiapp]2024/08/01 07:58:33.590591  	 port:15000
+ALWAYS : [apiapp]2024/08/01 07:58:33.590682  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 07:58:33.590755  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 07:58:33.590903  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 07:58:33.590953 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 07:58:33.590985 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 07:58:33.591794 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:33.591866 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:33.591898 apisvr process ID : 562454 562454
+ALWAYS : [apiapp]2024/08/01 07:58:33.591926 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 07:58:33.591980 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 07:58:33.593812 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 07:58:33.594039 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 07:58:34.589961 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 07:58:34.590166 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 07:58:34.590226 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 07:58:34.590258  	 [Database]
+ALWAYS : [apiapp]2024/08/01 07:58:34.590286  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 07:58:34.590318  	 port:3306
+ALWAYS : [apiapp]2024/08/01 07:58:34.590340  	 user:dev
+ALWAYS : [apiapp]2024/08/01 07:58:34.590367  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 07:58:34.590404  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 07:58:34.590447  	 [Http]
+ALWAYS : [apiapp]2024/08/01 07:58:34.590481  	 port:15000
+ALWAYS : [apiapp]2024/08/01 07:58:34.590533  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 07:58:34.590564  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 07:58:34.590637  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 07:58:34.590661 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 07:58:34.590687 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 07:58:34.591790 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:34.591946 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 07:58:34.591987 apisvr process ID : 562463 562463
+ALWAYS : [apiapp]2024/08/01 07:58:34.592084 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 07:58:34.592273 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 07:58:34.593979 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 07:58:34.594041 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 07:59:43.856617 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 07:59:43.856766 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 07:59:43.856808 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 07:59:43.856828  	 [Database]
+ALWAYS : [apiapp]2024/08/01 07:59:43.856855  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 07:59:43.856879  	 port:3306
+ALWAYS : [apiapp]2024/08/01 07:59:43.856899  	 user:dev
+ALWAYS : [apiapp]2024/08/01 07:59:43.856923  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 07:59:43.856946  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 07:59:43.856966  	 [Http]
+ALWAYS : [apiapp]2024/08/01 07:59:43.856985  	 port:15000
+ALWAYS : [apiapp]2024/08/01 07:59:43.857010  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 07:59:43.857031  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 07:59:43.857094  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 07:59:43.857136 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 07:59:43.857159 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 07:59:43.857535 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 07:59:43.857573 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 07:59:43.857583 apisvr process ID : 562515 562515
+ALWAYS : [apiapp]2024/08/01 07:59:43.857607 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 07:59:43.857627 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 07:59:43.858960 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 07:59:43.858991 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 08:00:00.830556 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 08:00:00.830714 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 08:00:00.830766 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 08:00:00.830796  	 [Database]
+ALWAYS : [apiapp]2024/08/01 08:00:00.830830  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 08:00:00.830863  	 port:3306
+ALWAYS : [apiapp]2024/08/01 08:00:00.830894  	 user:dev
+ALWAYS : [apiapp]2024/08/01 08:00:00.830920  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 08:00:00.830944  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 08:00:00.830966  	 [Http]
+ALWAYS : [apiapp]2024/08/01 08:00:00.830994  	 port:15000
+ALWAYS : [apiapp]2024/08/01 08:00:00.831025  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 08:00:00.831059  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 08:00:00.831125  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 08:00:00.831147 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 08:00:00.831173 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 08:00:00.831635 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 08:00:00.831662 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 08:00:00.831859 apisvr process ID : 562546 562546
+ALWAYS : [apiapp]2024/08/01 08:00:00.831883 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 08:00:00.831958 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 08:00:00.833445 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 08:00:00.833515 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 08:00:52.452968 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 08:00:52.453154 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 08:00:52.453206 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 08:00:52.453232  	 [Database]
+ALWAYS : [apiapp]2024/08/01 08:00:52.453257  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 08:00:52.453283  	 port:3306
+ALWAYS : [apiapp]2024/08/01 08:00:52.453308  	 user:dev
+ALWAYS : [apiapp]2024/08/01 08:00:52.453328  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 08:00:52.453353  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 08:00:52.453372  	 [Http]
+ALWAYS : [apiapp]2024/08/01 08:00:52.453410  	 port:15000
+ALWAYS : [apiapp]2024/08/01 08:00:52.453441  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 08:00:52.453467  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 08:00:52.453565  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 08:00:52.453578 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 08:00:52.453590 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 08:00:52.454021 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 08:00:52.454054 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 08:00:52.454065 apisvr process ID : 562769 562769
+ALWAYS : [apiapp]2024/08/01 08:00:52.454078 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 08:00:52.454101 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 08:00:52.455826 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 08:00:52.455880 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 08:00:52.456144 [apisvr]initServer..
+ALWAYS : [apiapp]2024/08/01 08:00:52.456184 [apisvr]appRun..
+ALWAYS : [apiapp]2024/08/01 08:00:52.456240 [apisvr]message process thread start..(1)
+ALWAYS : [apiapp]2024/08/01 08:00:52.506774 THRPrcmsg start
+ALWAYS : [apiapp]2024/08/01 08:00:52.506956 [apisvr]message process thread start..(2)
+PRINT   : [apiapp]2024/08/01 08:00:52.507109 main run.. [0]
+PRINT   : [apiapp]2024/08/01 08:02:53.394296 main run.. [1200]
+ALWAYS : [apiapp]2024/08/01 08:03:15.063794 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 08:03:15.063936 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 08:03:15.063990 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 08:03:15.064015  	 [Database]
+ALWAYS : [apiapp]2024/08/01 08:03:15.064040  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 08:03:15.064063  	 port:3306
+ALWAYS : [apiapp]2024/08/01 08:03:15.064083  	 user:dev
+ALWAYS : [apiapp]2024/08/01 08:03:15.064099  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 08:03:15.064118  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 08:03:15.064134  	 [Http]
+ALWAYS : [apiapp]2024/08/01 08:03:15.064157  	 port:15000
+ALWAYS : [apiapp]2024/08/01 08:03:15.064188  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 08:03:15.064210  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 08:03:15.064264  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 08:03:15.064289 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 08:03:15.064313 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 08:03:15.064764 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 08:03:15.064796 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 08:03:15.064818 apisvr process ID : 563044 563044
+ALWAYS : [apiapp]2024/08/01 08:03:15.064848 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 08:03:15.064870 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 08:03:15.066285 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 08:03:15.066343 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 08:03:15.066621 [apisvr]initServer..
+ALWAYS : [apiapp]2024/08/01 08:03:15.066647 [apisvr]appRun..
+ALWAYS : [apiapp]2024/08/01 08:03:15.066668 [apisvr]message process thread start..(1)
+ALWAYS : [apiapp]2024/08/01 08:03:15.117284 [apisvr]message process thread start..(2)
+PRINT   : [apiapp]2024/08/01 08:03:15.117342 main run.. [0]
+ALWAYS : [apiapp]2024/08/01 08:03:15.117560 THRPrcmsg start
+ALWAYS : [apiapp]2024/08/01 08:05:27.770023 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 08:05:27.770200 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 08:05:27.770272 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 08:05:27.770301  	 [Database]
+ALWAYS : [apiapp]2024/08/01 08:05:27.770337  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 08:05:27.770368  	 port:3306
+ALWAYS : [apiapp]2024/08/01 08:05:27.770395  	 user:dev
+ALWAYS : [apiapp]2024/08/01 08:05:27.770425  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 08:05:27.770455  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 08:05:27.770482  	 [Http]
+ALWAYS : [apiapp]2024/08/01 08:05:27.770506  	 port:15000
+ALWAYS : [apiapp]2024/08/01 08:05:27.770540  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 08:05:27.770566  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 08:05:27.770633  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 08:05:27.770659 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 08:05:27.770684 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 08:05:27.771339 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 08:05:27.771418 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 08:05:27.771456 apisvr process ID : 563326 563326
+ALWAYS : [apiapp]2024/08/01 08:05:27.771489 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 08:05:27.771544 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 08:05:27.773307 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 08:05:27.773429 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 08:05:27.773642 [apisvr]initServer..
+ALWAYS : [apiapp]2024/08/01 08:05:27.773693 [apisvr]appRun..
+ALWAYS : [apiapp]2024/08/01 08:05:27.773726 [apisvr]message process thread start..(1)
+ALWAYS : [apiapp]2024/08/01 08:05:27.824252 [apisvr]message process thread start..(2)
+PRINT   : [apiapp]2024/08/01 08:05:27.824328 main run.. [0]
+ALWAYS : [apiapp]2024/08/01 08:05:27.824456 THRPrcmsg start
+ALWAYS : [apiapp]2024/08/01 08:05:31.011370 [apisvr]]Accept Signal 2
+ALWAYS : [apiapp]2024/08/01 08:05:31.011532 SIGINT(2)
+
+ALWAYS : [apiapp]2024/08/01 08:05:31.765634 [apisvr]]Accept Signal 15
+ALWAYS : [apiapp]2024/08/01 08:05:31.765688 SIGTERM(15)
+
+ALWAYS : [apiapp]2024/08/01 08:05:31.849024 clearEnv quit [apisvr]...
+ALWAYS : [apiapp]2024/08/01 08:05:31.849077 clearEnv pid (563326) (0) (false)
+ALWAYS : [apiapp]2024/08/01 08:05:32.050243 Process quit [apisvr] [563326]! bye~~:)
+ALWAYS : [apiapp]2024/08/01 09:28:33.887888 [apisvr]initEnvVaiable..(1)
+ALWAYS : [apiapp]2024/08/01 09:28:33.888104 [apisvr]initEnvVaiable..(2)
+ALWAYS : [apiapp]2024/08/01 09:28:33.888163 [apisvr]App Environment variable
+ALWAYS : [apiapp]2024/08/01 09:28:33.888205  	 [Database]
+ALWAYS : [apiapp]2024/08/01 09:28:33.888284  	 host:10.1.1.164
+ALWAYS : [apiapp]2024/08/01 09:28:33.888334  	 port:3306
+ALWAYS : [apiapp]2024/08/01 09:28:33.888363  	 user:dev
+ALWAYS : [apiapp]2024/08/01 09:28:33.888405  	 pw:dev
+ALWAYS : [apiapp]2024/08/01 09:28:33.888447  	 db  :uwpis
+ALWAYS : [apiapp]2024/08/01 09:28:33.888493  	 [Http]
+ALWAYS : [apiapp]2024/08/01 09:28:33.888542  	 port:15000
+ALWAYS : [apiapp]2024/08/01 09:28:33.888607  	 domain:theroad.web.com
+ALWAYS : [apiapp]2024/08/01 09:28:33.888665  	 AllowOrigins:[http://localhost:3000 https://localhost:3000 http://localhost:3001 https://localhost:3001 http://theroad.web.com:31010 https://theroad.web.com:31010 http://osansmart.com:31010 https://osansmart.com:31010 http://theroad.web.com:15000 https://theroad.web.com:15000]
+ALWAYS : [apiapp]2024/08/01 09:28:33.888759  	 VERSION:
+ALWAYS : [apiapp]2024/08/01 09:28:33.888823 [apisvr]initVariable..
+ALWAYS : [apiapp]2024/08/01 09:28:33.888854 [apisvr]iniSignal..
+ALWAYS : [apiapp]2024/08/01 09:28:33.889612 [apisvr]initProcess..
+ALWAYS : [apiapp]2024/08/01 09:28:33.889691 [apisvr]RegisterProcess..
+ALWAYS : [apiapp]2024/08/01 09:28:33.889723 apisvr process ID : 565678 565678
+ALWAYS : [apiapp]2024/08/01 09:28:33.889752 [apisvr]initThread..
+ALWAYS : [apiapp]2024/08/01 09:28:33.889792 [apisvr]initDatabase..
+ALWAYS : [apiapp]2024/08/01 09:28:33.891474 [apisvr]initObject..
+ALWAYS : [apiapp]2024/08/01 09:28:33.891496 [apisvr]initHttp..
+ALWAYS : [apiapp]2024/08/01 09:28:33.891598 [apisvr]initServer..
+ALWAYS : [apiapp]2024/08/01 09:28:33.891625 [apisvr]appRun..
+ALWAYS : [apiapp]2024/08/01 09:28:33.891639 [apisvr]message process thread start..(1)
+ALWAYS : [apiapp]2024/08/01 09:28:33.942209 THRPrcmsg start
+ALWAYS : [apiapp]2024/08/01 09:28:33.942255 [apisvr]message process thread start..(2)
+PRINT   : [apiapp]2024/08/01 09:28:33.942303 main run.. [0]
+ALWAYS : [apiapp]2024/08/01 09:28:35.764716 [apisvr]]Accept Signal 2
+ALWAYS : [apiapp]2024/08/01 09:28:35.764803 SIGINT(2)
+
+ALWAYS : [apiapp]2024/08/01 09:28:35.881093 [apisvr]]Accept Signal 15
+ALWAYS : [apiapp]2024/08/01 09:28:35.881142 SIGTERM(15)
+
+ALWAYS : [apiapp]2024/08/01 09:28:35.957044 clearEnv quit [apisvr]...
+ALWAYS : [apiapp]2024/08/01 09:28:35.957110 clearEnv pid (565678) (0) (false)
+ALWAYS : [apiapp]2024/08/01 09:28:36.158156 Process quit [apisvr] [565678]! bye~~:)
