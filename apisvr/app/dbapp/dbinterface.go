@@ -1,6 +1,7 @@
 package dbapp
 
 import (
+	"apisvr/app/am"
 	"context"
 	"database/sql"
 )
@@ -15,4 +16,16 @@ type DBHandler interface {
 	Open2(dbNm string) (*sql.DB, error)
 	Close(*sql.DB)
 	Ping() (bool, error)
+
+	// R
+	ReadTest() ([]am.TestVal, error)
+
+	// C
+	CreateTest(info am.TestVal) error
+
+	// U
+	UpdateTest(val int) error
+
+	// D
+	DelTest(id int) error
 }

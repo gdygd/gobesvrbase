@@ -3,6 +3,8 @@ package httpapp
 const (
 	SUCCESS = 0
 	FAIL    = 1
+
+	BE_TIMEOUT = 4
 )
 
 // 쿠키만료시간

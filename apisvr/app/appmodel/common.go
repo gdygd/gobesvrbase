@@ -36,6 +36,7 @@ type appVariable struct {
 // Log
 // ---------------------------------------------------------------------------
 var Applog *goglib.OLog2 = goglib.InitLogEnv("./log", "apiapp", 2)
+var Netlog *goglib.OLog2 = goglib.InitLogEnv("./log", "netapp", 2)
 
 // ---------------------------------------------------------------------------
 // App Variable

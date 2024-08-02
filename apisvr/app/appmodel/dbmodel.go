@@ -1,5 +1,6 @@
 package am
 
-type Test struct {
-	Name string
+type TestVal struct {
+	Dt  string
+	Val int
 }

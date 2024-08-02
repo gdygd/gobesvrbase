@@ -288,8 +288,14 @@ func MakeHandler(dbHandler dbapp.DBHandler) *HttpAppHandler {
 	// Init API
 	// test..
 
+	// Get
 	r.HandleFunc("/gettest", a.GetTest).Methods("GET")
+
+	// Post
 	r.HandleFunc("/posttest", a.PostTest).Methods("GET")
+	r.HandleFunc("/netcmd", a.NetCmdTest).Methods("GET")
+
+	// Delete
 	r.HandleFunc("/deltest", a.DeleteTest).Methods("GET")
 
 	// sse

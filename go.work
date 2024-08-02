@@ -7,7 +7,9 @@ use (
 	./apisvr/app/dbapp/mdb
 	./apisvr/app/httpapp
 	./apisvr/app/msgapp
+	./apisvr/app/netapp
 	./apisvr/app/objdb
+	./apisvr/comm
 	./cli
 	./cli/cmd
 	./sharedObj

@@ -260,7 +260,7 @@ func RegisterProcess() bool {
 	// register process id
 	process.RegisterPid(os.Getpid())
 
-	am.Applog.Always("apisvr process ID : %d %d", process.GetPid(), os.Getpid())
+	am.Applog.Always(" \t process ID : %d %d", process.GetPid(), os.Getpid())
 	return true
 
 }
@@ -551,8 +551,8 @@ func main() {
 			break
 		}
 
-		if num%1200 == 0 {
-			am.Applog.Print(2, "main run.. [%d]", num)
+		if num%1000 == 0 {
+			am.Applog.Print(2, "api main run.. [%d]", num)
 		}
 		num++
 

@@ -39,6 +39,7 @@ func THRPrcmsg(t *goglib.Thread, chThrStop chan bool, arg1, arg2, arg3 interface
 	//------------------------------------
 	// tx routine
 	//------------------------------------
+	var runcnt int = 0
 	for {
 		select {
 		case <-chThrStop:
@@ -54,8 +55,13 @@ func THRPrcmsg(t *goglib.Thread, chThrStop chan bool, arg1, arg2, arg3 interface
 			break
 		}
 
+		if runcnt%1000 == 0 {
+			am.Applog.Print(2, "message process[%d]", runcnt)
+		}
+		runcnt++
+
 		t.RunBase.UpdateRunInfo()
-		time.Sleep(time.Millisecond * 50)
+		time.Sleep(time.Millisecond * 100)
 	}
 
 	am.Applog.Always("[2]message process thread quit..")
