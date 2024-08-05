@@ -19,6 +19,7 @@ import (
 	"apisvr/app/dbapp/mdb"
 	"apisvr/app/httpapp"
 	"apisvr/app/msgapp"
+	"apisvr/app/netapp"
 	"apisvr/app/objdb"
 
 	"github.com/gorilla/handlers"
@@ -33,14 +34,17 @@ import (
 var shminst *shmlinux.Linuxshm = nil
 
 var dbInst dbapp.DBHandler
+var tcpInst *netapp.CommHandler = nil
 
 var httpInst *httpapp.HttpAppHandler = nil
 var process *goglib.Process
 var terminate bool = false
 
 var logmngTimer time.Time
+var tmupdTimer time.Time
 
-var thrmsgprc *goglib.Thread = nil // msg process thread
+var thrmsgprc *goglib.Thread = nil    // msg process thread
+var thrnetclient *goglib.Thread = nil // net client thread
 
 // ------------------------------------------------------------------------------
 // const
@@ -52,7 +56,7 @@ const versionpath = "./version.txt"
 const LOGMNG_INTERVAL = 1000 * 600 // 10 minute
 const SYSSTTCHECK_INTERVAL = 1000  // 1sec
 const LOGFILE_STORE_DATE = 30      // 30일만 로그파일 보존
-const TMUPD_INTERVAL = 500
+const TMUPD_INTERVAL = 1000
 
 // ------------------------------------------------------------------------------
 // sigHandler
@@ -86,8 +90,13 @@ func sigHandler(chSig chan os.Signal) {
 // checkSystemState
 // ------------------------------------------------------------------------------
 func checkSystemState() {
-	// check databases
-	// interval 1sec.
+
+	// server time update
+	if goglib.CheckElapsedTime(&tmupdTimer, TMUPD_INTERVAL) {
+		curtm := time.Now()
+		utcsecs := curtm.Unix()
+		objdb.SysInfo.SetSvrTime(utcsecs)
+	}
 }
 
 // ------------------------------------------------------------------------------
@@ -122,6 +131,9 @@ func initEnvVaiable() bool {
 	}
 
 	am.Applog.Always("[apisvr]initEnvVaiable..(2)")
+
+	am.AppVar.NetAddr = cfg.Section("NETINFO").Key("addr").String()
+	am.AppVar.NetPort, _ = cfg.Section("NETINFO").Key("port").Int()
 
 	am.AppVar.DbHost = cfg.Section("DATABASE").Key("host").String()
 	am.AppVar.DbPort, _ = cfg.Section("DATABASE").Key("port").Int()
@@ -364,6 +376,34 @@ func initServer() bool {
 }
 
 // ------------------------------------------------------------------------------
+// initNetwork
+// ------------------------------------------------------------------------------
+func initNetwork() bool {
+	fmt.Println("initNetwork..")
+	//  init network env
+	// network instance
+	tcpInst = netapp.MakeNetHandler("apiapp", am.AppVar.NetPort, am.AppVar.NetAddr)
+
+	// connect network
+	if tcpInst != nil {
+		ok := tcpInst.Open()
+
+		if !ok {
+			am.Applog.Error("server connect fail.. %d %s", am.AppVar.NetPort, am.AppVar.NetAddr)
+			//return false
+			return true
+		}
+
+	} else {
+		am.Applog.Error("Tcp instance nil..")
+		//return false
+		return true
+	}
+
+	return true
+}
+
+// ------------------------------------------------------------------------------
 // initThread
 // ------------------------------------------------------------------------------
 func initThread() {
@@ -371,6 +411,9 @@ func initThread() {
 
 	thrmsgprc = goglib.NewThread()
 	thrmsgprc.Init(msgapp.THRPrcmsg, 10)
+
+	thrnetclient = goglib.NewThread()
+	thrnetclient.Init(netapp.THRNetclient, 10, tcpInst)
 }
 
 // ------------------------------------------------------------------------------
@@ -382,6 +425,10 @@ func appRun() {
 	am.Applog.Always("[apisvr]message process thread start..(1)")
 	thrmsgprc.Start()
 	am.Applog.Always("[apisvr]message process thread start..(2)")
+
+	am.Applog.Always("[apisvr]net client process thread start..(1)")
+	thrnetclient.Start()
+	am.Applog.Always("[apisvr]net client process thread start..(2)")
 }
 
 // ------------------------------------------------------------------------------
@@ -399,6 +446,21 @@ func manageRoutine() {
 			am.Applog.Warn("RST_ABNOMAL(thrmsgprc)")
 			thrmsgprc.Kill()
 			thrmsgprc.Start()
+		default:
+			break
+		}
+	}
+
+	if thrnetclient.RunBase.Active {
+		var state int = 0
+
+		thrnetclient.IsRunning(&state)
+
+		switch state {
+		case goglib.RST_ABNOMAL:
+			am.Applog.Warn("RST_ABNOMAL(thrnetclient)")
+			thrnetclient.Kill()
+			thrnetclient.Start()
 		default:
 			break
 		}
@@ -474,6 +536,7 @@ func initEnv() bool {
 		return false
 	}
 
+	initNetwork()
 	initThread()
 
 	if !initDatabase() {
@@ -502,6 +565,14 @@ func initEnv() bool {
 // ------------------------------------------------------------------------------
 func clearEnv() {
 	am.Applog.Always("clearEnv quit [apisvr]...")
+
+	// thread kill
+	if thrmsgprc != nil && thrmsgprc.RunBase.Active {
+		thrmsgprc.Kill()
+	}
+	if thrnetclient != nil && thrnetclient.RunBase.Active {
+		thrnetclient.Kill() // thread종료시 network close
+	}
 
 	// clear pid
 	process.Deregister(os.Getpid())

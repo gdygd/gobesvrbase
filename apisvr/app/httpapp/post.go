@@ -36,7 +36,7 @@ func (a *HttpAppHandler) NetCmdTest(w http.ResponseWriter, r *http.Request) {
 	sessionKey := GetSessionKey()
 	defer ClearSessionKey(sessionKey)
 
-	var packetBuf []int = []int{}
+	var packetBuf []int = []int{1, 2, 3, 4, 5}
 	// Make mesage info (test)
 	msg := MakeCtrlMessage(sessionKey, 0, byte(netapp.PT_TEST), []int{0}, packetBuf)
 

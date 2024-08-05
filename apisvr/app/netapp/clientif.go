@@ -3,6 +3,7 @@ package netapp
 import (
 	"apisvr/app/am"
 	"sync"
+	"time"
 
 	"github.com/gdygd/goglib"
 	dt "github.com/gdygd/goglib/datastructure"
@@ -168,8 +169,8 @@ func (c *CommHandler) ManageRx() bool {
 			am.Netlog.Error("Rx Error [%d],%v", n, err.Error())
 			c.Close()
 		} else {
-			am.Netlog.Dump(1, "RXLow", rxbuf[:n], n)
-			c.RxHandler(rxbuf[:n], n)
+			am.Netlog.Dump(2, "RXLow", rxbuf[:n], n)
+			//c.RxHandler(rxbuf[:n], n)
 		}
 	}
 
@@ -313,6 +314,10 @@ func (c *CommHandler) ManageTx() bool {
 		return ok
 	}
 
+	if goglib.CheckElapsedTime(&c.stateTimer, 1000) {
+		c.SendTest()
+	}
+
 	msg, isexist := c.msg_q.Pop()
 	if isexist {
 		c.SendMsg(msg)
@@ -338,12 +343,12 @@ func (c *CommHandler) SendTest() {
 	var info []byte = make([]byte, MAX_BUFLEN)
 	var idx int = 0
 
-	// curtm := time.Now()
-	// utcsecs := curtm.Unix()
+	curtm := time.Now()
+	utcsecs := curtm.Unix()
 
-	// // time
-	// goglib.SetNumber64(info, idx, utcsecs, 8, goglib.ED_BIG)
-	// idx += 8
+	// time
+	goglib.SetNumber64(info, idx, utcsecs, 8, goglib.ED_BIG)
+	idx += 8
 
 	c.PushTxData(PT_TEST, info[:idx])
 }
@@ -390,13 +395,17 @@ func (c *CommHandler) PushTxData(code byte, buf []byte) {
 func (c *CommHandler) TxCtrlHandler(data CommReqMSG) bool {
 
 	ctrlCode := data.Code
-	am.Netlog.Print(3, "[TxCtrlHandler] (%02X)", ctrlCode)
+	am.Netlog.Print(3, "[TxCtrlHandler] (%02X) [%v]", ctrlCode, data.Data)
 	ok := true
 
 	switch ctrlCode {
 	case PT_TEST:
 		am.Netlog.Print(2, "TxCtrlHandler TSPPC_TX_TEST..")
 		c.PushTxData(data.Code, data.Data)
+
+		//test net to msgproc
+		var testpacket []byte = []byte{2, 0, 11, 7, 153, 1, 2, 3, 4, 5, 3}
+		c.ProcessTest(testpacket)
 
 	default:
 		am.Netlog.Warn("Undefined ctrl message code [%02x]", ctrlCode)

@@ -2,7 +2,7 @@ module apisvr/app/netapp
 
 go 1.21.9
 
-require github.com/gdygd/goglib v0.0.0-20240802053221-de9cd807cc21
+require github.com/gdygd/goglib v0.0.0-20240802070032-feb8d3d28b1a
 
 require (
 	github.com/fogleman/gg v1.3.0 // indirect

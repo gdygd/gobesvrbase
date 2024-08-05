@@ -2,6 +2,7 @@ package msgapp
 
 import (
 	"apisvr/app/am"
+	"apisvr/app/netapp"
 	"time"
 
 	"github.com/gdygd/goglib"
@@ -14,16 +15,28 @@ type PrcmsgAppHandler struct {
 }
 
 // ------------------------------------------------------------------------------
-// processtest
+// processTest
 // ------------------------------------------------------------------------------
-func (a *PrcmsgAppHandler) processtest() {
+func (a *PrcmsgAppHandler) processTest(data netapp.NetworkMSG) {
+	am.Applog.Print(2, "processTest..id:%d, code:[%02X], data:[%v]", data.Id, data.Code, data.Data)
 
 }
 
 // ------------------------------------------------------------------------------
 // msgHandler
 // ------------------------------------------------------------------------------
-func (a *PrcmsgAppHandler) msgHandler() {
+func (a *PrcmsgAppHandler) msgHandler(data netapp.NetworkMSG) {
+	// process comm packet
+
+	switch data.Code {
+
+	case netapp.PT_TEST:
+		// vms controller state
+		a.processTest(data)
+
+	default:
+		am.Applog.Warn("[prcapp] prcmsgapp Undefined opcode (%d)%02x", data.Id, data.Code)
+	}
 
 }
 
@@ -47,8 +60,12 @@ func THRPrcmsg(t *goglib.Thread, chThrStop chan bool, arg1, arg2, arg3 interface
 			terminate = true
 			break
 		default:
-			//
-			app.msgHandler()
+			// Pop Network message
+			netmsg, ok := netapp.PopNetMsg()
+			if ok {
+				app.msgHandler(netmsg)
+			}
+
 		}
 
 		if terminate {

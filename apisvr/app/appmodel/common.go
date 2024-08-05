@@ -10,6 +10,9 @@ import (
 type appVariable struct {
 	Version string
 
+	NetAddr string
+	NetPort int
+
 	DbHost       string
 	DbPort       int
 	DbUser       string
