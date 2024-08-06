@@ -6,13 +6,10 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"strconv"
 	"syscall"
 	"unsafe"
 
 	"github.com/gdygd/goshm/shmlinux"
-	"github.com/ghetzel/shmtool/shm"
-	"gopkg.in/ini.v1"
 )
 
 // ------------------------------------------------------------------------------
@@ -26,7 +23,6 @@ const skey = 0x1234 // shared memory key
 // local
 // ------------------------------------------------------------------------------
 var SharedMem *sharedObj.SharedMemory
-var pSegment *shm.Segment
 var terminate bool = false
 
 var shminst *shmlinux.Linuxshm
@@ -94,48 +90,6 @@ func initMemory2() bool {
 }
 
 // ------------------------------------------------------------------------------
-// initMemory
-// ------------------------------------------------------------------------------
-func initMemory() bool {
-	fmt.Printf("initMemory...\n")
-
-	// Write shared id to system.ini
-	cfg, err := ini.Load(systemini)
-	if err != nil {
-		fmt.Printf("fail to read sign_system.ini %v\n", err)
-		return false
-	}
-
-	id, _ := cfg.Section("SHARED_ID").Key("id").Int()
-
-	psg, err := shm.Open(id)
-	if err != nil {
-		fmt.Printf("shared memory open fail\n")
-		return false
-	}
-
-	pSegment = psg
-
-	shmId := pSegment.Id
-	strShmId := strconv.Itoa(shmId)
-
-	// Save ini file to shared memory id
-	cfg.Section("SHARED_ID").Key("id").SetValue(strShmId)
-	cfg.SaveTo(systemini)
-
-	usPtr, err := pSegment.Attach()
-	if err != nil {
-		fmt.Printf("shared memory attach fail\n")
-		return false
-	}
-
-	// shared memory attach
-	SharedMem = (*sharedObj.SharedMemory)(unsafe.Pointer(usPtr))
-
-	return true
-}
-
-// ------------------------------------------------------------------------------
 // initEnv
 // ------------------------------------------------------------------------------
 func initEnv() bool {
@@ -161,10 +115,6 @@ func clearEnv() {
 
 	// detach memory
 	fmt.Printf("[cli] memory detach (1)\n")
-	addr := unsafe.Pointer(SharedMem)
-	if pSegment != nil {
-		pSegment.Detach(addr)
-	}
 
 	if shminst != nil {
 		err := shminst.DeleteShm()

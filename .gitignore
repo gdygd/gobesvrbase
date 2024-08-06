@@ -1,0 +1,4 @@
+*.log
+./bin/apimp
+./bin/apisvr
+./bin/cli

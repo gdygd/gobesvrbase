@@ -33,7 +33,7 @@ type appVariable struct {
 // ------------------------------------------------------------------------------
 var SharedMem *sharedObj.SharedMemory
 var process *goglib.Process
-var Mlog *goglib.OLog2 = goglib.InitLogEnv("./log", "mngprc", 0)
+var Mlog *goglib.OLog2 = goglib.InitLogEnv("./log", "apimp", 0)
 
 // ------------------------------------------------------------------------------
 // const
@@ -45,7 +45,7 @@ const sysenvini = "./sys_env.ini"
 // Local
 // ------------------------------------------------------------------------------
 var isAleayProcess bool = false
-var PRC_DESC = []string{"mngprc", "./apisvr"}
+var PRC_DESC = []string{"apimp", "./apisvr"}
 var prcArgv = [][]string{{""}, {""}}
 var AppVar appVariable
 
@@ -57,22 +57,22 @@ var shminst *shmlinux.Linuxshm = nil
 func sigHandler(chSig chan os.Signal) {
 	for {
 		signal := <-chSig
-		str := fmt.Sprintf("[mngprc] Accept Signal : %d", signal)
+		str := fmt.Sprintf("[apimp] Accept Signal : %d", signal)
 		Mlog.Info("%s", str)
 		switch signal {
 		case syscall.SIGHUP:
-			Mlog.Info("[mngprc]SIGHUP(%d)\n", signal)
+			Mlog.Info("[apimp]SIGHUP(%d)\n", signal)
 		case syscall.SIGINT:
-			Mlog.Info("[mngprc]SIGINT(%d)\n", signal)
+			Mlog.Info("[apimp]SIGINT(%d)\n", signal)
 			SharedMem.System.Terminate = true
 		case syscall.SIGTERM:
-			Mlog.Info("[mngprc]SIGTERM(%d)\n", signal)
+			Mlog.Info("[apimp]SIGTERM(%d)\n", signal)
 			SharedMem.System.Terminate = true
 		case syscall.SIGKILL:
-			Mlog.Info("[mngprc]SIGKILL(%d)\n", signal)
+			Mlog.Info("[apimp]SIGKILL(%d)\n", signal)
 			SharedMem.System.Terminate = true
 		default:
-			Mlog.Info("[mngprc]Unknown signal(%d)\n", signal)
+			Mlog.Info("[apimp]Unknown signal(%d)\n", signal)
 			SharedMem.System.Terminate = true
 		}
 	}
@@ -92,15 +92,13 @@ func initProcessDesc() {
 // initEnvVaiable
 // ------------------------------------------------------------------------------
 func initEnvVaiable() bool {
-	Mlog.Always("[mngprc]initEnvVaiable..(1)")
+	Mlog.Always("[apimp]initEnvVaiable..")
 
 	cfg, err := ini.Load(sysenvini)
 	if err != nil {
 		Mlog.Error("fail to read sysenvini.ini %v", err)
 		return false
 	}
-
-	Mlog.Always("[mngprc]initEnvVaiable..(2)")
 
 	AppVar.DbHost = cfg.Section("DATABASE").Key("host").String()
 	AppVar.DbPort, _ = cfg.Section("DATABASE").Key("port").Int()
@@ -110,7 +108,7 @@ func initEnvVaiable() bool {
 
 	AppVar.DebugLv, _ = cfg.Section("OPRMODE").Key("debuglv").Int()
 
-	Mlog.Always("[mngprc]App Environment variable")
+	Mlog.Always("[apimp]App Environment variable")
 
 	Mlog.Always(" \t [Database]")
 	Mlog.Always(" \t host:%s", AppVar.DbHost)
@@ -131,7 +129,7 @@ func initEnvVaiable() bool {
 func initProcess() bool {
 	// process initialize & start
 
-	Mlog.Info("[mngprc]initProcess")
+	Mlog.Info("[apimp]initProcess")
 	process = &SharedMem.Process[sharedObj.PRC_IDX_MAIN]
 
 	for idx := 0; idx < sharedObj.MAX_PROCESS; idx++ {
@@ -152,7 +150,7 @@ func initProcess() bool {
 // initMemory
 // ------------------------------------------------------------------------------
 func initMemory() bool {
-	Mlog.Info("[mngprc]initMemory...#1")
+	Mlog.Info("[apimp]initMemory...#1")
 	shminst := shmlinux.NewLinuxShm()
 	shminst.InitShm(sharedObj.MEM_KEY, sharedObj.MEM_SIZE)
 
@@ -165,11 +163,11 @@ func initMemory() bool {
 		Mlog.Error("initMemory AttachShm err : ", err)
 	}
 
-	Mlog.Info("[mngprc]initMemory...#2")
+	Mlog.Info("[apimp]initMemory...#2")
 
 	SharedMem = (*sharedObj.SharedMemory)(unsafe.Pointer(shminst.Addr))
 	SharedMem.System.Terminate = false
-	Mlog.Info("[mngprc]initMemory...#3")
+	Mlog.Info("[apimp]initMemory...#3")
 	return true
 }
 
@@ -177,7 +175,7 @@ func initMemory() bool {
 // initSignal
 // ------------------------------------------------------------------------------
 func initSignal() {
-	Mlog.Info("[mngprc]iniSignal")
+	Mlog.Info("[apimp]iniSignal")
 	// signal handler
 	ch_signal := make(chan os.Signal, 10)
 	signal.Notify(ch_signal, syscall.SIGSEGV, syscall.SIGKILL, syscall.SIGHUP, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGUSR1)
@@ -191,7 +189,7 @@ func isAlreadyProcess() bool {
 	// 프로세스 러닝상태 확인
 	// 이미 프로세스가 동작중이면 false
 
-	Mlog.Info("[mngprc]isAlreadyProcess...")
+	Mlog.Info("[apimp]isAlreadyProcess...")
 
 	var isrunning bool = false
 
@@ -215,7 +213,7 @@ func isAlreadyProcess() bool {
 }
 
 func SetDebugLv() {
-	Mlog.Info("[mngprc]SetDebugLv...")
+	Mlog.Info("[apimp]SetDebugLv...")
 	process.SetDebugLv(AppVar.DebugLv)
 }
 
@@ -225,15 +223,15 @@ func SetDebugLv() {
 func initEnv() bool {
 	// check process running...
 	if isAlreadyProcess() {
-		Mlog.Error("[mngprc]프로세스 is running ...")
+		Mlog.Error("[apimp]프로세스 is running ...")
 		isAleayProcess = true
 		return false
 	}
 
-	Mlog.Info("[mngprc]initEnv ...")
+	Mlog.Info("[apimp]initEnv ...")
 
 	if !initEnvVaiable() {
-		Mlog.Error("[mngprc] 환경변수 초기화FAIL...")
+		Mlog.Error("[apimp] 환경변수 초기화FAIL...")
 		return false
 	}
 
@@ -250,7 +248,7 @@ func initEnv() bool {
 		return false
 	}
 
-	Mlog.Info("[mngprc]initEnv ok")
+	Mlog.Info("[apimp]initEnv ok")
 
 	// Register PID
 	process.RegisterPid(os.Getpid())
@@ -303,8 +301,8 @@ func manageProcess() {
 // ------------------------------------------------------------------------------
 func clearEnv() {
 	if isAleayProcess {
-		Mlog.Print(6, "[mngprc] Is Aleady process")
-		Mlog.Print(6, "[mngprc] Process quit, byebye~ :)")
+		Mlog.Print(6, "[apimp] Is Aleady process")
+		Mlog.Print(6, "[apimp] Process quit, byebye~ :)")
 		return
 	}
 
@@ -361,7 +359,7 @@ func clearEnv() {
 
 	Mlog.Print(2, "memery destroy")
 
-	Mlog.Print(2, "[mngprc] Process quit, byebye~ :)")
+	Mlog.Print(2, "[apimp] Process quit, byebye~ :)")
 
 	// 로그파일 close
 	//pmlog := &Mlog
@@ -379,7 +377,7 @@ func checkLogDir() {
 func main() {
 	var initOk bool = false
 	checkLogDir()
-	Mlog.Info("%s", "[mngprc] Process start")
+	Mlog.Info("%s", "[apimp] Process start")
 
 	initOk = initEnv()
 
@@ -400,6 +398,6 @@ func main() {
 
 	defer clearEnv()
 
-	Mlog.Info("[mngprc] Process end..")
+	Mlog.Info("[apimp] Process end..")
 
 }

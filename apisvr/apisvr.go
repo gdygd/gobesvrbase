@@ -122,15 +122,13 @@ func initVariable() {
 // initEnvVaiable
 // ------------------------------------------------------------------------------
 func initEnvVaiable() bool {
-	am.Applog.Always("[apisvr]initEnvVaiable..(1)")
+	am.Applog.Always("[apisvr]initEnvVaiable..")
 
 	cfg, err := ini.Load(sysenvini)
 	if err != nil {
 		am.Applog.Error("fail to read sysenvini.ini %v", err)
 		return false
 	}
-
-	am.Applog.Always("[apisvr]initEnvVaiable..(2)")
 
 	am.AppVar.NetAddr = cfg.Section("NETINFO").Key("addr").String()
 	am.AppVar.NetPort, _ = cfg.Section("NETINFO").Key("port").Int()
@@ -541,7 +539,7 @@ func initEnv() bool {
 
 	if !initDatabase() {
 		am.Applog.Error("Database initial fail..")
-		return false
+		//return false
 	}
 
 	initDebugLevel()

@@ -40,7 +40,15 @@
 ```
 
 ## 5.Usage
--clone and make
+##### 1) clone repository
+* https://github.com/gdygd/gobesvrbase.git
+##### 2) compile source
+* $sh make.sh
+##### 3) Execute process
+* move bin directory : $cd ./bin
+* execute process : apimp
+##### 4) Test Tcp Server process
+* ref : https://github.com/gdygd/tcpserver
 
 ## 6.test api and sse
 * `/gettest` : get test api, It resonse "{"result":0,"data":[{"Dt":"2024-08-05 17:09:33","Val":1}],"reqdata":null}"
@@ -55,3 +63,26 @@
 
 ### 7.2) *httpapp - netapp - msgapp*
 ![http-netapp](https://github.com/user-attachments/assets/ccd3a2fd-0341-44ff-a642-70fa66aca3ab)
+
+
+## 8.CLI Usage
+* command list
+```
+ * help
+ * system
+ * version
+ * process
+ * debug
+ * exit
+ * termiante
+```
+* help : show command help message
+* system : show system infomation
+* version : show application version infomation
+* process : show process state infomation
+* debug : change logging level
+* exit : quti cli
+* terminate : terminate all process
+
+### 8.1) CLI UI
+![cli](https://github.com/user-attachments/assets/db07270b-56af-427d-89df-610e3b12662f)

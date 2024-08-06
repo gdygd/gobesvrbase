@@ -12,6 +12,7 @@ import (
 type SystemInfo struct {
 	svrTime    time.Time `json:"-"`
 	StrSvrtime string    `json:"svrtime"`
+	SvrUtc     int64
 }
 
 // ---------------------------------------------------------------------------
@@ -25,10 +26,15 @@ var SysInfo *SystemInfo = &SystemInfo{svrTime: time.Now()}
 //
 // ------------------------------------------------------------------------------
 func (s *SystemInfo) SetSvrTime(utc int64) {
+	s.SvrUtc = utc
 	s.svrTime = time.Unix(utc, 0)
 	s.StrSvrtime = fmt.Sprintf("%04d-%02d-%02d  %02d:%02d:%02d", s.svrTime.Year(), s.svrTime.Month(), s.svrTime.Day(), s.svrTime.Hour(), s.svrTime.Minute(), s.svrTime.Second())
 
 	s.sseSystemInfo()
+
+	var info SystemInfo = SystemInfo{SvrUtc: utc}
+	SetShmSvrState(info)
+
 }
 
 func (s *SystemInfo) GetSvrTime() string {
