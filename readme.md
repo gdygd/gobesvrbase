@@ -50,9 +50,7 @@
 
 ## 6.Data flow
 ### 6.1) *httpapp - dbapp*
+![http-dbapp](https://github.com/user-attachments/assets/7bed880c-79f6-4341-8cac-8281b0a60794)
 
-
-### 6.2) *httpapp - netapp*
-
-
-### 6.3) *netapp - msgapp*
+### 6.2) *httpapp - netapp - msgapp*
+![http-netapp](https://github.com/user-attachments/assets/ccd3a2fd-0341-44ff-a642-70fa66aca3ab)
