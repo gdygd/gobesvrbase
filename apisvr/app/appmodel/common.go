@@ -30,7 +30,8 @@ type appVariable struct {
 	Https        string // "yes" or "no"
 	Alloworigins []string
 
-	DebugLv int
+	DebugLv   int
+	KafkaMode string // "yes or no"	// yes : kafka app run, else not run
 }
 
 // ---------------------------------------------------------------------------
@@ -40,6 +41,7 @@ type appVariable struct {
 // ---------------------------------------------------------------------------
 var Applog *goglib.OLog2 = goglib.InitLogEnv("./log", "apiapp", 2)
 var Netlog *goglib.OLog2 = goglib.InitLogEnv("./log", "netapp", 2)
+var Kfklog *goglib.OLog2 = goglib.InitLogEnv("./log", "kafkaapp", 2)
 
 // ---------------------------------------------------------------------------
 // App Variable

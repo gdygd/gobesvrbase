@@ -18,6 +18,7 @@ import (
 	"apisvr/app/dbapp"
 	"apisvr/app/dbapp/mdb"
 	"apisvr/app/httpapp"
+	"apisvr/app/kafkaapp"
 	"apisvr/app/msgapp"
 	"apisvr/app/netapp"
 	"apisvr/app/objdb"
@@ -35,6 +36,8 @@ var shminst *shmlinux.Linuxshm = nil
 
 var dbInst dbapp.DBHandler
 var tcpInst *netapp.CommHandler = nil
+var kfkproducInst *kafkaapp.KafkaHandler = nil
+var kfkconsumInst *kafkaapp.KafkaHandler = nil
 
 var httpInst *httpapp.HttpAppHandler = nil
 var process *goglib.Process
@@ -43,8 +46,10 @@ var terminate bool = false
 var logmngTimer time.Time
 var tmupdTimer time.Time
 
-var thrmsgprc *goglib.Thread = nil    // msg process thread
-var thrnetclient *goglib.Thread = nil // net client thread
+var thrmsgprc *goglib.Thread = nil       // msg process thread
+var thrnetclient *goglib.Thread = nil    // net client thread
+var thrkafkaConsum *goglib.Thread = nil  // kafka consumer thread
+var thrkafkaProduce *goglib.Thread = nil // kafka producer thread
 
 // ------------------------------------------------------------------------------
 // const
@@ -167,6 +172,7 @@ func initEnvVaiable() bool {
 	}
 
 	am.AppVar.DebugLv, _ = cfg.Section("OPRMODE").Key("debuglv").Int()
+	am.AppVar.KafkaMode = cfg.Section("OPRMODE").Key("kafka").String()
 
 	am.Applog.Always("[apisvr]App Environment variable")
 
@@ -181,6 +187,10 @@ func initEnvVaiable() bool {
 	am.Applog.Always(" \t port:%d", am.AppVar.HttpPort)
 	am.Applog.Always(" \t domain:%s", am.AppVar.Domain)
 	am.Applog.Always(" \t AllowOrigins:%v", am.AppVar.Alloworigins)
+
+	am.Applog.Always(" \t [OPRMODE]")
+	am.Applog.Always(" \t debuglv:%d", am.AppVar.DebugLv)
+	am.Applog.Always(" \t kafka:%s", am.AppVar.KafkaMode)
 
 	// read version file
 	dat, err := os.ReadFile(versionpath)
@@ -398,6 +408,9 @@ func initNetwork() bool {
 		return true
 	}
 
+	kfkproducInst = kafkaapp.MakeKfkHandler("127.0.0.1", 9092)
+	kfkconsumInst = kafkaapp.MakeKfkHandler("127.0.0.1", 9092)
+
 	return true
 }
 
@@ -412,6 +425,12 @@ func initThread() {
 
 	thrnetclient = goglib.NewThread()
 	thrnetclient.Init(netapp.THRNetclient, 10, tcpInst)
+
+	thrkafkaConsum = goglib.NewThread()
+	thrkafkaConsum.Init(kafkaapp.THRKafkaConsum, 10, kfkconsumInst)
+
+	thrkafkaProduce = goglib.NewThread()
+	thrkafkaProduce.Init(kafkaapp.THRKafkaProduce, 10, kfkproducInst)
 }
 
 // ------------------------------------------------------------------------------
@@ -424,9 +443,17 @@ func appRun() {
 	thrmsgprc.Start()
 	am.Applog.Always("[apisvr]message process thread start..(2)")
 
-	am.Applog.Always("[apisvr]net client process thread start..(1)")
-	thrnetclient.Start()
-	am.Applog.Always("[apisvr]net client process thread start..(2)")
+	// am.Applog.Always("[apisvr]net client process thread start..(1)")
+	// thrnetclient.Start()
+	// am.Applog.Always("[apisvr]net client process thread start..(2)")
+
+	am.Applog.Always("[apisvr]kafka consumer thread start..(1)")
+	thrkafkaConsum.Start()
+	am.Applog.Always("[apisvr]kafka consumer thread start..(2)")
+
+	// am.Applog.Always("[apisvr]kafka consumer thread start..(1)")
+	// thrkafkaProduce.Start()
+	// am.Applog.Always("[apisvr]kafka producer thread start..(2)")
 }
 
 // ------------------------------------------------------------------------------
@@ -459,6 +486,35 @@ func manageRoutine() {
 			am.Applog.Warn("RST_ABNOMAL(thrnetclient)")
 			thrnetclient.Kill()
 			thrnetclient.Start()
+		default:
+			break
+		}
+	}
+
+	if thrkafkaConsum.RunBase.Active {
+		var state int = 0
+
+		thrkafkaConsum.IsRunning(&state)
+
+		switch state {
+		case goglib.RST_ABNOMAL:
+			am.Applog.Warn("RST_ABNOMAL(thrkafkaConsum)")
+			thrkafkaConsum.Kill()
+			thrkafkaConsum.Start()
+		default:
+			break
+		}
+	}
+	if thrkafkaProduce.RunBase.Active {
+		var state int = 0
+
+		thrkafkaProduce.IsRunning(&state)
+
+		switch state {
+		case goglib.RST_ABNOMAL:
+			am.Applog.Warn("RST_ABNOMAL(thrkafkaProduce)")
+			thrkafkaProduce.Kill()
+			thrkafkaProduce.Start()
 		default:
 			break
 		}
@@ -571,6 +627,13 @@ func clearEnv() {
 	if thrnetclient != nil && thrnetclient.RunBase.Active {
 		thrnetclient.Kill() // thread종료시 network close
 	}
+	if thrkafkaConsum != nil && thrkafkaConsum.RunBase.Active {
+		thrkafkaConsum.Kill() // thread종료시
+	}
+
+	if thrkafkaProduce != nil && thrkafkaProduce.RunBase.Active {
+		thrkafkaProduce.Kill() // thread종료시
+	}
 
 	// clear pid
 	process.Deregister(os.Getpid())
@@ -633,7 +696,7 @@ func main() {
 		manageLogfile()
 
 		process.RunBase.UpdateRunInfo()
-		time.Sleep(time.Millisecond * 100)
+		time.Sleep(time.Millisecond * 3000)
 	}
 
 	am.Applog.Info("Process end.. [apisvr]")

@@ -3,8 +3,9 @@
 **`gobesvrbase` is a backend server process**
 1. It provides http rest api, http sse
 2. It provides tcp/ip commucation, database access(mariadb)
-3. It provides shared memory between process, linux signal handling, CLI process
-4. **It is just backend server base process**
+3. It provides kafka commucation
+4. It provides shared memory between process, linux signal handling, CLI process
+5. **It is just backend server base process**
 
 ## 2.Process structure
 ![process](https://github.com/user-attachments/assets/26749e12-674f-4c95-a1c8-b85fc67f2eef)
@@ -29,6 +30,7 @@
 │   ├── httpapp `[http api, sse package]`
 │   ├── msgapp `[network message processing package]`
 │   ├── netapp `[network communication, httpapp-netapp and netapp-msgapp channel management package]`
+│   ├── kafkatapp `[kafka message consume and produce]`
 │   └── objdb `[Object management package]`
 └── comm `[tcp/ip wrapper package]`
 ```
@@ -64,6 +66,8 @@
 ### 7.2) *httpapp - netapp - msgapp*
 ![dafaflow2](https://github.com/user-attachments/assets/d0481ece-77ea-4975-b67c-b3be053dfe48)
 
+### 7.2) *httpapp - kafkaapp - netapp - msgapp*
+![kafkaapp](https://github.com/user-attachments/assets/19fb84c0-7b36-47de-8f26-f4679e85b54e)
 
 ## 8.CLI Usage
 * command list

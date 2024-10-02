@@ -8,6 +8,7 @@ use (
 	./apisvr/app/httpapp
 	./apisvr/app/msgapp
 	./apisvr/app/netapp
+	./apisvr/app/kafkaapp
 	./apisvr/app/objdb
 	./apisvr/comm
 	./cli
