@@ -97,6 +97,3 @@
 * debug : change logging level
 * exit : quti cli
 * terminate : terminate all process
-
-### 9.1) CLI UI
-![cli](https://github.com/user-attachments/assets/db07270b-56af-427d-89df-610e3b12662f)
