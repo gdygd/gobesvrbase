@@ -79,7 +79,7 @@
 ![dafaflow2](https://github.com/user-attachments/assets/d0481ece-77ea-4975-b67c-b3be053dfe48)
 
 ### 8.2) *httpapp - kafkaapp - netapp - msgapp*
-#### - http를 통해 kafka 메세지 생산
+#### - 외부 시스템을 통해 kafka 메세지 생산
 #### - 수집한 kafka 메세지를 SSE를 통해 사용자에게 제공
 ![kafkaapp](https://github.com/user-attachments/assets/19fb84c0-7b36-47de-8f26-f4679e85b54e)
 
