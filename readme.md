@@ -1,6 +1,9 @@
 # 'gobesvrbase'
 데이터 베이스, HTTP, 소켓, Kafka를 이용한 go언어 기반 백엔드 서버 기본 모델
 
+## 의존LIB
+* [github.com/gdygd/goglib](https://github.com/gdygd/goglib)
+
 ## 1.기술 스택
 * `Language` : go (go1.21.9)
 * `Database`: mariadb
