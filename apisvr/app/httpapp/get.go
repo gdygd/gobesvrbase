@@ -16,7 +16,7 @@ func (a *HttpAppHandler) GetTest(w http.ResponseWriter, r *http.Request) {
 
 	am.Applog.Print(2, "GetTest")
 
-	readInfo, err := a.dbHnd.ReadTest()
+	readInfo, err := a.dbHnd.ReadTest(a.ctx)
 
 	// check error
 	if err != nil {

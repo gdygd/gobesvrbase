@@ -28,12 +28,12 @@ import (
 func (k *KafkaHandler) ConnectProduce() error {
 	var err error = nil
 
-	am.Kfklog.Print(2, "Kfk Connect..#1")
+	am.Kfklog.Print(1, "Kfk Connect..#1")
 	if !goglib.CheckElapsedTime(&k.connectTimer, CONNECT_INTERVAL) {
 		return nil
 	}
 
-	am.Kfklog.Print(2, "Kfk Connect..#2")
+	am.Kfklog.Print(1, "Kfk Connect..#2")
 	// Kafka 브로커 주소
 	addr := fmt.Sprintf("%s:%d", k.broker.addr, k.broker.port)
 	brokers := []string{addr}
@@ -54,7 +54,7 @@ func (k *KafkaHandler) ConnectProduce() error {
 		return err
 	}
 
-	am.Kfklog.Print(2, "Kfk Connect..#3")
+	am.Kfklog.Print(1, "Kfk Connect..#3")
 	k.ResetCommEnv()
 	// connect broker server
 	k.isconnected = true
@@ -62,25 +62,25 @@ func (k *KafkaHandler) ConnectProduce() error {
 }
 
 func (k *KafkaHandler) ManageTx() bool {
-	am.Kfklog.Print(2, "Kfk ManageTx #1")
+	am.Kfklog.Print(1, "Kfk ManageTx #1")
 
 	// check isconnected
 	if !k.isconnected {
 		// check connect interval and connect
-		am.Kfklog.Print(2, "Kfk ManageTx #1.1")
+		am.Kfklog.Print(1, "Kfk ManageTx #1.1")
 		err := k.ConnectProduce()
 		if err != nil {
 			return false
 		}
 		return true
 	}
-	am.Kfklog.Print(2, "Kfk ManageTx #2")
+	am.Kfklog.Print(1, "Kfk ManageTx #2")
 
 	if goglib.CheckElapsedTime(&k.stateTimer, STATE_INTERVAL) {
 		k.SendTest()
 	}
 
-	am.Kfklog.Print(2, "Kfk ManageTx #3")
+	am.Kfklog.Print(1, "Kfk ManageTx #3")
 	// get message and send message
 	msg, isexist := k.msg_q.Pop()
 
@@ -91,7 +91,7 @@ func (k *KafkaHandler) ManageTx() bool {
 			k.CloseProduce()
 		}
 	}
-	am.Kfklog.Print(2, "Kfk ManageTx #4")
+	am.Kfklog.Print(1, "Kfk ManageTx #4")
 
 	// check send state
 

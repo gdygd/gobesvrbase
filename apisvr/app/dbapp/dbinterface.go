@@ -18,14 +18,14 @@ type DBHandler interface {
 	Ping() (bool, error)
 
 	// R
-	ReadTest() ([]am.TestVal, error)
+	ReadTest(ctx context.Context) ([]am.TestVal, error)
 
 	// C
-	CreateTest(info am.TestVal) error
+	CreateTest(ctx context.Context, info am.TestVal) error
 
 	// U
-	UpdateTest(val int) error
+	UpdateTest(ctx context.Context, val int) error
 
 	// D
-	DelTest(id int) error
+	DelTest(ctx context.Context, id int) error
 }

@@ -2,13 +2,16 @@ package mdb
 
 import (
 	"apisvr/app/am"
+	"context"
 	"fmt"
 )
 
 // ------------------------------------------------------------------------------
 // DelTest
 // ------------------------------------------------------------------------------
-func (m *MariadbHandler) DelTest(id int) error {
+func (m *MariadbHandler) DelTest(ctx context.Context, id int) error {
+	var qeury string = fmt.Sprintf(`delete from TestValT_TB where VAL = %d`, id)
+
 	db, dbErr := m.Open()
 	var err error
 
@@ -22,12 +25,11 @@ func (m *MariadbHandler) DelTest(id int) error {
 
 	am.Applog.Print(2, "[DelTest] (%d)", id)
 
-	var strQry string = fmt.Sprintf(`delete from TestValT_TB where VAL = %d`, id)
-
-	_, err = db.Exec(strQry)
+	// _, err = db.Exec(qeury)
+	_, err = db.ExecContext(ctx, qeury)
 
 	if err != nil {
-		am.Applog.Error("[DelTest Query error] : %s [%s]", err.Error(), strQry)
+		am.Applog.Error("[DelTest Query error] : %s [%s]", err.Error(), qeury)
 
 		return err
 	}

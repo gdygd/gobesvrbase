@@ -3,6 +3,7 @@ package httpapp
 import (
 	"apisvr/app/am"
 	"apisvr/app/dbapp"
+	"context"
 	"crypto/tls"
 	"crypto/x509"
 	"flag"
@@ -37,6 +38,7 @@ type HttpAppHandler struct {
 	http.Handler
 	dbHnd     dbapp.DBHandler
 	tlsConfig *tls.Config
+	ctx       context.Context
 }
 
 type rootHandler struct {
@@ -283,6 +285,7 @@ func MakeHandler(dbHandler dbapp.DBHandler) *HttpAppHandler {
 		Handler: r,
 		dbHnd:   dbHandler,
 		//tlsConfig: initHttpTLSconfig(),
+		ctx: context.Background(),
 	}
 
 	// Init API

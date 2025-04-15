@@ -2,13 +2,18 @@ package mdb
 
 import (
 	"apisvr/app/am"
+	"context"
 	"fmt"
 )
 
 // ------------------------------------------------------------------------------
 // CreateTest
 // ------------------------------------------------------------------------------
-func (m *MariadbHandler) CreateTest(info am.TestVal) error {
+func (m *MariadbHandler) CreateTest(ctx context.Context, info am.TestVal) error {
+	var query string = fmt.Sprintf(`
+		INSERT INTO TestValT_TB (TEST_DT, VAL)
+		VALUES (now(), %d)`, info.Val)
+
 	db, dbErr := m.Open()
 	var err error
 
@@ -20,14 +25,10 @@ func (m *MariadbHandler) CreateTest(info am.TestVal) error {
 		return dbErr
 	}
 
-	var strQry string = fmt.Sprintf(`
-		INSERT INTO TestValT_TB (TEST_DT, VAL)
-		VALUES (now(), %d)`, info.Val)
-
-	_, err = db.Exec(strQry)
+	_, err = db.ExecContext(ctx, query)
 
 	if err != nil {
-		am.Applog.Error("[CreateTest Query error] : %s [%s] (%v)", err.Error(), strQry, info)
+		am.Applog.Error("[CreateTest Query error] : %s [%s] (%v)", err.Error(), query, info)
 		return err
 	}
 

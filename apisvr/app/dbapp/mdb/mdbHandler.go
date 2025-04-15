@@ -3,6 +3,7 @@ package mdb
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"time"
 
 	"apisvr/app/am"
@@ -18,6 +19,7 @@ var Temp dbapp.DBHandler = nil
 // Struct
 // ------------------------------------------------------------------------------
 type MariadbHandler struct {
+	db        *sql.DB
 	user      string
 	pw        string
 	dbNm      string
@@ -49,6 +51,7 @@ func (m *MariadbHandler) Open() (*sql.DB, error) {
 	}
 
 	m.Connected = true
+	m.db = database
 
 	return database, nil
 }
@@ -101,6 +104,25 @@ func (m *MariadbHandler) Close(db *sql.DB) {
 	if db != nil {
 		db.Close()
 	}
+}
+
+// ------------------------------------------------------------------------------
+// execTx
+// ------------------------------------------------------------------------------
+func (m *MariadbHandler) execTx(ctx context.Context, fn func(*MariadbHandler) error) error {
+	tx, err := m.db.BeginTx(ctx, nil)
+	if err != nil {
+		return err
+	}
+
+	err = fn(m)
+	if err != nil {
+		if rbErr := tx.Rollback(); rbErr != nil {
+			return fmt.Errorf("tx err : %v, rv err %v", err, rbErr)
+		}
+		return err
+	}
+	return tx.Commit()
 }
 
 // ------------------------------------------------------------------------------

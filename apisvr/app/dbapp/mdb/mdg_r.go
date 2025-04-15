@@ -2,12 +2,15 @@ package mdb
 
 import (
 	"apisvr/app/am"
+	"context"
 )
 
 // ------------------------------------------------------------------------------
 // ReadGroup
 // ------------------------------------------------------------------------------
-func (m *MariadbHandler) ReadTest() ([]am.TestVal, error) {
+func (m *MariadbHandler) ReadTest(ctx context.Context) ([]am.TestVal, error) {
+	query := `SELECT now() as dt, 1 as val from dual`
+
 	db, dbErr := m.Open()
 
 	var rdata am.TestVal = am.TestVal{}
@@ -18,7 +21,7 @@ func (m *MariadbHandler) ReadTest() ([]am.TestVal, error) {
 		return nil, dbErr
 	}
 
-	rows, err := db.Query(`SELECT now() as dt, 1 as val from dual`)
+	rows, err := m.db.QueryContext(ctx, query)
 
 	if err != nil {
 		return nil, err
@@ -37,8 +40,10 @@ func (m *MariadbHandler) ReadTest() ([]am.TestVal, error) {
 		datas = append(datas, rdata)
 
 	}
-	if err = rows.Err(); err != nil {
-		am.Applog.Error("[ReadTest Query error(2)] : %s " + err.Error())
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
 		return nil, err
 	}
 	am.Applog.Print(2, "[ReadTest ok]")

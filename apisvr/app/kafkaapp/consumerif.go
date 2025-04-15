@@ -3,7 +3,6 @@ package kafkaapp
 import (
 	"apisvr/app/am"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/IBM/sarama"
@@ -32,12 +31,12 @@ func (k *KafkaHandler) ConnectConsume() error {
 
 	var err error = nil
 
-	am.Kfklog.Print(2, "Kfk Connect..#1")
+	am.Kfklog.Print(1, "Kfk Connect..#1")
 	if !goglib.CheckElapsedTime(&k.connectTimer, CONNECT_INTERVAL) {
 		return nil
 	}
 
-	am.Kfklog.Print(2, "Kfk Connect..#2")
+	am.Kfklog.Print(1, "Kfk Connect..#2")
 	// Kafka 브로커 주소
 	addr := fmt.Sprintf("%s:%d", k.broker.addr, k.broker.port)
 	brokers := []string{addr}
@@ -46,28 +45,28 @@ func (k *KafkaHandler) ConnectConsume() error {
 	k.config = sarama.NewConfig()
 	k.config.Producer.Return.Successes = true
 
-	log.Println("#1 connectK")
+	// log.Println("#1 connectK")
 	k.client, err = sarama.NewClient(brokers, k.config)
 	if err != nil {
-		log.Printf("Kafka 클라이언트 생성 실패: %v\n", err)
+		am.Kfklog.Error("Kafka 클라이언트 생성 실패: %v\n", err)
 		return err
 	}
-	log.Println("#2 connectK")
+	// log.Println("#2 connectK")
 
 	k.consumer, err = sarama.NewConsumerFromClient(k.client)
 	if err != nil {
-		log.Fatalf("Kafka 컨슈머 생성 실패: %v", err)
+		am.Kfklog.Error("Kafka 컨슈머 생성 실패: %v", err)
 		return err
 	}
-	log.Println("#3 connectK")
+	// log.Println("#3 connectK")
 
 	// 특정 토픽의 파티션 컨슈머 생성
 	k.partitionConsumer, err = k.consumer.ConsumePartition("test_topic", 0, sarama.OffsetNewest)
 	if err != nil {
-		log.Fatalf("파티션 컨슈머 생성 실패: %v", err)
+		am.Kfklog.Error("파티션 컨슈머 생성 실패: %v", err)
 		return err
 	}
-	log.Println("#4 connectK")
+	// log.Println("#4 connectK")
 
 	k.ResetCommEnv()
 	k.isconnected = true
@@ -76,7 +75,7 @@ func (k *KafkaHandler) ConnectConsume() error {
 
 func (k *KafkaHandler) ManageLine() bool {
 	if !k.isconnected {
-		am.Kfklog.Print(2, "Kfk ManageRx connected..")
+		am.Kfklog.Print(1, "Kfk ManageRx connected..")
 		k.ConnectConsume()
 	}
 
@@ -99,7 +98,7 @@ func (k *KafkaHandler) ManageRx() {
 	prevRecvSec := k.recvtm.Unix()
 
 	if (curSec - prevRecvSec) > 5 {
-		am.Kfklog.Warn("There aren't any received message within 5sec elapsed sed[%d]", (curSec - prevRecvSec))
+		// am.Kfklog.Warn("There aren't any received message within 5sec elapsed sed[%d]", (curSec - prevRecvSec))
 		// close and connect
 
 		k.CloseConsume()
@@ -108,7 +107,7 @@ func (k *KafkaHandler) ManageRx() {
 }
 
 func (k *KafkaHandler) CloseConsume() {
-	am.Kfklog.Print(2, "Close..#1")
+	am.Kfklog.Print(1, "Close..#1")
 	k.clearClient()
 	//am.Kfklog.Print(2, "Close..#2")
 	k.clearConsumer()
